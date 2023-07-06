@@ -1,6 +1,6 @@
-package com.javatpoint.repository;  
+package com.gamosh.repository;
 import org.springframework.data.repository.CrudRepository;  
-import com.javatpoint.model.Log;  
+import com.gamosh.model.Log;
 public interface LogRepository extends CrudRepository<Log, Integer>  
 {  
     

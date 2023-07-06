@@ -1,4 +1,4 @@
-package com.javatpoint.controller;
+package com.gamosh.controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.javatpoint.model.Log;
-import com.javatpoint.service.LogService;
-//creating RestController  
+import com.gamosh.model.Log;
+import com.gamosh.service.LogService;
+
 @RestController
 public class LogController {
     //autowired the LogService class  

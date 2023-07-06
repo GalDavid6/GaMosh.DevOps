@@ -1,8 +1,9 @@
-package com.javatpoint.model;
+package com.gamosh.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.Datetime;
 
 @Entity
 @Table
