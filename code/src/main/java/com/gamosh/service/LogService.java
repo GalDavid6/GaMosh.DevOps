@@ -1,26 +1,26 @@
 package com.gamosh.service;
+
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.gamosh.model.Log;
 import com.gamosh.repository.LogRepository;
+
 @Service
 public class LogService {
+
     @Autowired
-    LogRepository LogRepository;
-    //getting all Log records  
-    public List <Log> getAllLog() {
-        List <Log> logs = new ArrayList <Log>();
-        LogRepository.findAll().forEach(Log -> logs.add(Log));
-        return logs;
-    }
-    //getting a specific record  
-    public Log getLogById(int id) {
-        return LogRepository.findById(id).get();
+    private LogRepository logRepository;
+
+    public LogService(LogRepository logRepository) {
+        this.logRepository = logRepository;
     }
 
-    public void saveOrUpdate(Log Log) {
-        LogRepository.save(Log);
+    //getting all Log records  
+    public List<Log> getAllLog() {
+        List<Log> logs = new ArrayList<>();
+        logRepository.findAll().forEach(Log -> logs.add(Log));
+        return logs;
     }
 }
