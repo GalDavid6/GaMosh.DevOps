@@ -3,7 +3,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.Datetime;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -11,7 +11,7 @@ public class Log {
 
     @Id
     @Column
-    private int log_id; 
+    private final int log_id; 
 
     @Column
     private String message;
@@ -23,13 +23,17 @@ public class Log {
     private String routing;
 
     @Column
-    private Datetime createAt;
+    private final LocalDateTime createAt;
+    
+    public static int counter = 0;
+    
+    Log() {
+    	this.log_id = counter++;
+    	this.createAt = LocalDateTime.now();
+    }
 
     public int getId() {
         return log_id;
-    }
-    public void setId(int id) {
-        this.log_id = id;
     }
 
     public String getMessage() {
@@ -53,11 +57,7 @@ public class Log {
         this.routing = routing;
     }
 
-    public Datetime getCreateAt() {
+    public LocalDateTime getCreateAt() {
         return createAt;
     }
-    public void setCreateAt(Datetime createAt) {
-        this.createAt = createAt;
-    }
-
 }

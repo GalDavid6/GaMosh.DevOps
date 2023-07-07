@@ -23,4 +23,8 @@ public class LogService {
     public void saveOrUpdate(Log Log) {
         LogRepository.save(Log);
     }
+    
+//    public void delete(int id) {
+//    	LogRepository.findById(id).get().delete(id);
+//    }
 }
