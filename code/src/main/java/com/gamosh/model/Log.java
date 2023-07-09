@@ -1,8 +1,5 @@
 package com.gamosh.model;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,7 +24,7 @@ public class Log {
     
     public static int counter = 0;
     
-    Log() {
+    public Log() {
     	this.log_id = counter++;
     	this.createAt = LocalDateTime.now();
     }

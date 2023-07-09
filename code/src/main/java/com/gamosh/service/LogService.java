@@ -20,8 +20,9 @@ public class LogService {
         return LogRepository.findById(id).get();
     }
 
-    public void saveOrUpdate(Log Log) {
-        LogRepository.save(Log);
+    public void saveOrUpdate() {
+    	Log log = new Log();
+        LogRepository.save(log);
     }
     
 //    public void delete(int id) {

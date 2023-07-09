@@ -1,7 +1,7 @@
-package com.gamosh.repository;
-import org.springframework.data.repository.CrudRepository;  
+package com.gamosh.repository; 
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.gamosh.model.Log;
-public interface LogRepository extends CrudRepository<Log, Integer>  
+public interface LogRepository extends JpaRepository<Log, Integer>  
 {  
     
 }
