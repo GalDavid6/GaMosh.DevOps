@@ -1,60 +1,77 @@
 package com.gamosh.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table
+@Table(name = "Log")
 public class Log {
 
-    @Id
+//    @Id
+//    @Column
+//    private final int log_id; 
+//
+//    public static int counter = 0;
+	
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;	
+    
     @Column
-    private final int log_id; 
-
-    @Column
-    private String message;
-
-    @Column
-    private String typeRequest;
+    private String typeRequest = "GET";
 
     @Column
     private String routing;
 
     @Column
-    private final LocalDateTime createAt;
+    private final String createAt;
     
-    public static int counter = 0;
+//    public Log(String route) {
+//    	this.log_id = counter++;
+//    	LocalDateTime dateTime = LocalDateTime.now();
+//    	DateTimeFormatter formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//    	this.createAt =dateTime.format(formatDateTime);
+//     	this.typeRequest = "GET";
+//     	this.routing = route;
+//    }
+//    
+//    public Log() {
+//    	this.log_id = counter++;
+//    	LocalDateTime dateTime = LocalDateTime.now();
+//    	DateTimeFormatter formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//    	this.createAt =dateTime.format(formatDateTime);
+//     	this.typeRequest = "GET";
+//     	this.routing = "None";
+//    }
     
     public Log() {
-    	this.log_id = counter++;
-    	this.createAt = LocalDateTime.now();
+		LocalDateTime dateTime = LocalDateTime.now();
+		DateTimeFormatter formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		this.createAt =dateTime.format(formatDateTime);
+	 	this.routing = "None";
+	}
+ 
+    public Log(String route) {
+		LocalDateTime dateTime = LocalDateTime.now();
+		DateTimeFormatter formatDateTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		this.createAt =dateTime.format(formatDateTime);
+	 	this.routing = route;
     }
 
-    public int getId() {
-        return log_id;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public String getTypeRequest() {
-        return typeRequest;
-    }
-    public void setTypeRequest(String typeRequest) {
-        this.typeRequest = typeRequest;
+//    public int getId() {
+//        return log_id;
+//    }
+    
+    public Integer getId() {
+    	return this.id;
     }
     
-    public String getRouting() {
-        return routing;
+    public String getType() {
+    	return this.typeRequest;
     }
-    public void setRouting(String routing) {
-        this.routing = routing;
+    public String getRoute() {
+    	return this.routing;
     }
-
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public String getDateTime() {
+    	return this.createAt;
     }
 }
