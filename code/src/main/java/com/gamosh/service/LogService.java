@@ -28,4 +28,9 @@ public class LogService {
     	Log log = new Log(string);
         logRepository.save(log);
     }
+
+	public void save(String string, String string2) {
+    	Log log = new Log(string, string2);
+        logRepository.save(log);
+	}
 }

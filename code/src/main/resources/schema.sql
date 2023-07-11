@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS LOG;
 
 CREATE TABLE
     LOG (
-        log_id INT AUTO_INCREMENT PRIMARY KEY,
-        typeRequest TEXT NOT NULL,
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        type_request TEXT NOT NULL,
         routing TEXT NOT NULL,
-        createAt DATETIME NOT NULL
+        create_at TEXT NOT NULL
     );
