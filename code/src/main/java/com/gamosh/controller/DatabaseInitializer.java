@@ -28,4 +28,5 @@ public class DatabaseInitializer {
     	logService.save("No Route", "DB Initialzer");
         LOG.info("Logs Seeded");
     }
+    //
 }
